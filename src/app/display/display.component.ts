@@ -10,6 +10,7 @@ export class DisplayComponent implements OnInit {
   displays;
   constructor(service: DisplayService) {
     this.displays = service.getDisplay();
+    //this.displays = service.logout();
   }
 
   ngOnInit() {

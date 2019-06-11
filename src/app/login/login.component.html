@@ -1,7 +1,7 @@
 <div class="container fluid">
 
    <div id="formbox">
-      <form [formGroup]="registerForm"  (ngSubmit)="store()" >
+      <form [formGroup]="registerForm" (ngSubmit)="store()" >
       <div class="form-group">
          Username : <br>
          <input type="text" id="firstName" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }"
@@ -21,39 +21,39 @@
          <label for="password" [ngClass]="registerForm.controls['password'].invalid ? '' : ''">Password : </label><br>
          <input type="password" name="password" id="password"
          placeholder="Enter Password"
+         (keyup)="onkey($event)"
          formControlName="password" class="form-control" 
          [ngClass]="registerForm.controls['password'].invalid ? 'is-invalid' : 'submitted'">
-         
+         <p> {{ value }} </p>
          <div style=" font-size: 12px;" class="text-danger col" *ngIf="registerForm.controls['password'].hasError('required') && submitted">
            Password is Required!
          </div>
-         
-         <div style=" font-size: 12px;" class="text-danger col" *ngIf="(registerForm.controls['password'].hasError('required') || registerForm.controls['password'].hasError('minlength')) && submitted">
-            
-            Must be at least 8 characters!
+         <div>
+            <div [hidden]="elenght" style=" font-size: 12px;" class="text-danger col" *ngIf="(registerForm.controls['password'].hasError('minlength') && submitted) || (registerForm.controls['password'].hasError('minlength') && registerForm.controls['password'].touched)">
+               Must be at least 8 characters!
+            </div>
          </div>
           
-         <div style=" font-size: 12px;" class="text-danger col"  *ngIf="(registerForm.controls['password'].hasError('required') || registerForm.controls['password'].hasError('hasNumber')) && submitted">
-            
+         <div [hidden]="enum" style=" font-size: 12px;" class="text-danger col"  *ngIf="(registerForm.controls['password'].hasError('hasNumber') && submitted) || ( registerForm.controls['password'].hasError('hasNumber') && registerForm.controls['password'].touched)">
             Must contain at least 1 number!
          </div>
           
-         <div style=" font-size: 12px;" class="text-danger col" *ngIf="(registerForm.controls['password'].hasError('required') || registerForm.controls['password'].hasError('hasCapitalCase')) && submitted">
+         <div [hidden]="eucase" style=" font-size: 12px;" class="text-danger col" *ngIf="(registerForm.controls['password'].hasError('hasCapitalCase') && submitted) || (registerForm.controls['password'].hasError('hasCapitalCase') &&  registerForm.controls['password'].touched)">
            
-            Must contain at least 1 Capital case!
+           Must contain at least 1 Capital case! 
          </div>
           
-         <div style=" font-size: 12px;" class="text-danger col" *ngIf="(registerForm.controls['password'].hasError('required') || registerForm.controls['password'].hasError('hasSmallCase')) && submitted">
+         <div [hidden]="elcase" style=" font-size: 12px;" class="text-danger col" *ngIf="(registerForm.controls['password'].hasError('hasSmallCase') && submitted) || (registerForm.controls['password'].hasError('hasSmallCase') &&  registerForm.controls['password'].touched)">
             
-            Must contain at least 1 Letter Small case!
+             Must contain at least 1 Letter Small case! 
          </div>
           
-         <div style=" font-size: 12px;" class="text-danger col" *ngIf="(registerForm.controls['password'].hasError('required') || registerForm.controls['password'].hasError('hasSpecialCharacters')) && submitted">
+         <div [hidden]="esymbol" style=" font-size: 12px;" class="text-danger col" *ngIf="(registerForm.controls['password'].hasError('hasSpecialCharacters') && submitted) || (registerForm.controls['password'].hasError('hasSpecialCharacters') && registerForm.controls['password'].touched)">
            
-            Must contain at least 1 Special symbol!
+              Must contain at least 1 Special symbol! 
          </div>
          <br>
-         <div class="form-group" style=" padding: 0px 120px ;">
+         <div class="form-group" style=" padding: 0px 90px ;">
 
             <input type="submit" value="Submit" >
          </div>

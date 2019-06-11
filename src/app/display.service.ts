@@ -10,5 +10,13 @@ export class DisplayService {
 
     return hey;
   }
+
+  // logout() {
+  //   // delete from local storage
+  //   const hey = localStorage.setItem('username');
+
+  //   return hey;
+
+  // }
   constructor() { }
 }

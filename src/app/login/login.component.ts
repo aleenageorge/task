@@ -13,10 +13,14 @@ export class LoginComponent implements OnInit {
  firstName: FormControl;
  registerForm: FormGroup;
  submitted = false;
-
+ value;
+ elength = true;
+ eucase = true;
+ elcase = true;
+ esymbol = true;
+ enum = true;
 
  constructor(public router: Router, public formBuilder: FormBuilder) {
-//  this.frmSignup = this.createSignupForm();
 
  }
 
@@ -58,5 +62,26 @@ export class LoginComponent implements OnInit {
    localStorage.setItem('username', this.registerForm.get('firstName').value);
    this.router.navigateByUrl('display');
 }
+ onkey(event: any) {
+  this.value = event.target.value;
+  if (this.value.length < 8 ) {
+    this.elength = false;
+  }
 
+  if (this.value.hasCapitalCase) {
+    this.elcase = false;
+  }
+  if (this.value.hasSmallCase) {
+    this.eucase = false;
+  }
+  if (this.value.hasSpecialCharacters) {
+    this.esymbol = false;
+  }
+  if (this.value.hasNumber) {
+    this.enum = false;
+  }
+
+
+
+ }
 }
