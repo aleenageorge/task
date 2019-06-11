@@ -66,19 +66,44 @@ export class LoginComponent implements OnInit {
   this.value = event.target.value;
   if (this.value.length < 8 ) {
     this.elength = false;
+    this.eucase = true;
+    this.elcase = true;
+    this.esymbol = true;
+    this.enum = true;
+    return;
   }
 
-  if (this.value.hasCapitalCase) {
-    this.elcase = false;
-  }
-  if (this.value.hasSmallCase) {
+  if (!this.value.hasCapitalCase) {
     this.eucase = false;
+    this.elength = true;
+    this.elcase = true;
+    this.esymbol = true;
+    this.enum = true;
+    return;
   }
-  if (this.value.hasSpecialCharacters) {
+  if (!this.value.hasSmallCase) {
+    this.elength = true;
+    this.eucase = true;
+    this.elcase = false;
+    this.esymbol = true;
+    this.enum = true;
+    return;
+  }
+  if (!this.value.hasSpecialCharacters) {
+    this.elength = true;
+    this.eucase = true;
+    this.elcase = true;
     this.esymbol = false;
+    this.enum = true;
+    return;
   }
-  if (this.value.hasNumber) {
+  if (!this.value.hasNumber) {
     this.enum = false;
+    this.elength = true;
+    this.elcase = true;
+    this.esymbol = true;
+    this.eucase = true;
+    return;
   }
 
 
