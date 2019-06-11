@@ -1,0 +1,71 @@
+<div class="container fluid">
+
+   <div id="formbox">
+      <form [formGroup]="registerForm"  (ngSubmit)="store()" >
+      <div class="form-group">
+         Username : <br>
+         <input type="text" id="firstName" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }"
+          placeholder="Enter Username">
+          <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+            <div style=" font-size: 12px;" *ngIf="f.firstName.errors.required">
+               Name is required
+            </div>
+            <div style=" font-size: 12px;" *ngIf="f.firstName.errors.minlength">   
+               Name should be minimum 3 characters
+            </div>
+
+        </div>
+
+      </div>
+      <div class="form-group">
+         <label for="password" [ngClass]="registerForm.controls['password'].invalid ? '' : ''">Password : </label><br>
+         <input type="password" name="password" id="password"
+         placeholder="Enter Password"
+         formControlName="password" class="form-control" 
+         [ngClass]="registerForm.controls['password'].invalid ? 'is-invalid' : 'submitted'">
+         
+         <div style=" font-size: 12px;" class="text-danger col" *ngIf="registerForm.controls['password'].hasError('required') && submitted">
+           Password is Required!
+         </div>
+         
+         <div style=" font-size: 12px;" class="text-danger col" *ngIf="(registerForm.controls['password'].hasError('required') || registerForm.controls['password'].hasError('minlength')) && submitted">
+            
+            Must be at least 8 characters!
+         </div>
+          
+         <div style=" font-size: 12px;" class="text-danger col"  *ngIf="(registerForm.controls['password'].hasError('required') || registerForm.controls['password'].hasError('hasNumber')) && submitted">
+            
+            Must contain at least 1 number!
+         </div>
+          
+         <div style=" font-size: 12px;" class="text-danger col" *ngIf="(registerForm.controls['password'].hasError('required') || registerForm.controls['password'].hasError('hasCapitalCase')) && submitted">
+           
+            Must contain at least 1 Capital case!
+         </div>
+          
+         <div style=" font-size: 12px;" class="text-danger col" *ngIf="(registerForm.controls['password'].hasError('required') || registerForm.controls['password'].hasError('hasSmallCase')) && submitted">
+            
+            Must contain at least 1 Letter Small case!
+         </div>
+          
+         <div style=" font-size: 12px;" class="text-danger col" *ngIf="(registerForm.controls['password'].hasError('required') || registerForm.controls['password'].hasError('hasSpecialCharacters')) && submitted">
+           
+            Must contain at least 1 Special symbol!
+         </div>
+         <br>
+         <div class="form-group" style=" padding: 0px 120px ;">
+
+            <input type="submit" value="Submit" >
+         </div>
+        </div>
+         <br>
+
+      
+      
+
+      </form>
+
+   </div>
+
+</div>
+<a routerLink="/display">display</a>
