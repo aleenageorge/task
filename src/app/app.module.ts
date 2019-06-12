@@ -36,6 +36,10 @@ import { ChartsComponent } from './charts/charts.component';
         component: ChartsComponent
       },
       {
+        path: '**',
+        component: LoginComponent
+      },
+      {
         path: '',
         component: LoginComponent
       }

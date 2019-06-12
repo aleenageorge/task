@@ -15,6 +15,7 @@ export class ChartsComponent implements OnInit {
     this.getChart();
   }
   getChart() {
+    d3.selectAll('svg').remove();
     const letterFrequencies = [
       { letter: 'A', frequency: 0.08167 },
       { letter: 'B', frequency: 0.01492 },

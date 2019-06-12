@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators, FormControlName, FormControl } from '@angular/forms';
 import { CustomValidators } from '../custom-validators';
-
+declare var d3: any;
 
 @Component({
  selector: 'login',
@@ -25,6 +25,8 @@ export class LoginComponent implements OnInit {
  }
 
  ngOnInit() {
+  d3.selectAll('svg').remove();
+
   this.registerForm = this.formBuilder.group({
     firstName: ['', [Validators.required, Validators.minLength(3)]],
     password: [
@@ -64,49 +66,6 @@ export class LoginComponent implements OnInit {
 }
  onkey(event: any) {
   this.value = event.target.value;
-  if (this.value.length < 8 ) {
-    this.elength = false;
-    this.eucase = true;
-    this.elcase = true;
-    this.esymbol = true;
-    this.enum = true;
-    return;
-  }
-
-  if (!this.value.hasSmallCase) {
-    this.elength = true;
-    this.eucase = true;
-    this.elcase = false;
-    this.esymbol = true;
-    this.enum = true;
-    return;
-  }
-  if (!this.value.hasCapitalCase) {
-    this.eucase = false;
-    this.elength = true;
-    this.elcase = true;
-    this.esymbol = true;
-    this.enum = true;
-    return;
-  }
-  if (!this.value.hasSpecialCharacters) {
-    this.elength = true;
-    this.eucase = true;
-    this.elcase = true;
-    this.esymbol = false;
-    this.enum = true;
-    return;
-  }
-  if (!this.value.hasNumber) {
-    this.enum = false;
-    this.elength = true;
-    this.elcase = true;
-    this.esymbol = true;
-    this.eucase = true;
-    return;
-  }
-
-
-
- }
+  
+}
 }
