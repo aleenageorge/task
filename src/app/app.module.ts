@@ -9,12 +9,14 @@ import { LoginComponent } from './login/login.component';
 import { DisplayComponent } from './display/display.component';
 import { DisplayService } from './display.service';
 import { RouterModule } from '@angular/router';
+import { ChartsComponent } from './charts/charts.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    DisplayComponent  ],
+    DisplayComponent,
+    ChartsComponent  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -28,6 +30,10 @@ import { RouterModule } from '@angular/router';
       {
         path: 'login',
         component: LoginComponent
+      },
+      {
+        path: 'chart',
+        component: ChartsComponent
       },
       {
         path: '',
