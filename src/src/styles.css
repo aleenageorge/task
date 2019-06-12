@@ -1,0 +1,39 @@
+/* You can add global styles to this file, and also import other style files */
+.bar
+{
+  fill:  #4682b4
+}
+.bar:hover
+{ fill: #000
+}
+.axis
+{  font-family: Georgia;
+font-size: 12px
+}
+.axis path,
+.axis line
+{  fill: none;
+shape-rendering: crispEdges;
+stroke: #000
+}
+.x.axis path
+{  display: none
+}
+.y.axis text
+{  fill: #000
+}
+.tooltip
+{  background: #b0c4de;
+border: 0;
+font-family: Georgia;
+font-size: 10px;
+font-weight: bold;
+height: 10px;
+padding: 1px;
+pointer-events: none;
+position: absolute;
+text-align: center;
+width: 120px;
+}
+span
+{    color: #000}
