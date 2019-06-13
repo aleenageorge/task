@@ -1,0 +1,57 @@
+nav {
+    background-color: rgba( 95, 93, 93, 1);
+    height: 60px;
+}
+a {color:#000;
+text-decoration: none;
+}         /* Unvisited link  */
+a:visited {color:#000;} /* Visited link    */
+a:hover {color:#fff;}   /* Mouse over link */
+a:active {color:#000;}
+button {
+    background-color: rgb(139, 209, 236);
+     border: none;
+     cursor: pointer;
+     text-align: center;
+     padding: 5px 10px;
+     border-radius: 4px;
+     
+}
+button:hover {
+    background-color: rgb(99, 150, 170);
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    padding: 5px 10px;
+    border-radius: 4px;
+    color: white;
+    box-shadow: 0 16px 16px 0 rgba(0,0,0,0.24),0 15px 40px 0 rgba(0,0,0,0.19);
+    top: 2px;
+    margin-top: 2px;
+ 
+}
+#customers {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    border-collapse: 1px solid lightgray;
+    width: 35%;
+    margin-left: 600px;
+  }
+  
+  #customers td, #customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+
+  }
+  
+  #customers tr:nth-child(even){background-color: #f2f2f2;}
+  
+  #customers tr:hover {background-color: #ddd;}
+  
+  #customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color:rgb(2, 2, 2);
+    color: white;
+  }

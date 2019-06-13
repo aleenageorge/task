@@ -8,17 +8,13 @@ declare var d3: any;
   styleUrls: ['./display.component.css']
 })
 export class DisplayComponent implements OnInit {
-  displays;
-  
+
   constructor(service: DisplayService) {
     this.displays = service.getDisplay();
-    //this.displays = service.logout();
+    // this.displays = service.logout();
   }
-
-  ngOnInit() {
-    d3.selectAll('svg').remove();
-  }
-  const letterFrequencies = [
+  displays;
+  policies: [] = [
     { letter: 'A', frequency: 0.08167 },
     { letter: 'B', frequency: 0.01492 },
     { letter: 'C', frequency: 0.02782 },
@@ -46,5 +42,8 @@ export class DisplayComponent implements OnInit {
     { letter: 'Y', frequency: 0.01974 },
     { letter: 'Z', frequency: 0.00074 },
   ];
-  
+
+  ngOnInit() {
+    d3.selectAll('svg').remove();
+  }
 }

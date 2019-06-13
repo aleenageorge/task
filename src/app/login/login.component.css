@@ -8,6 +8,16 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     
     }
+    #formbox2 {
+        width: 320px;
+        padding: 15px;
+        border: 2px solid lightgray;
+        border-radius: 4px;
+        margin: auto;
+        margin-top: 13%; 
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        
+        }
   
 input[type=text],[type=password] {
        width: 220px;
@@ -44,3 +54,13 @@ input[type=submit]:hover {
         display: inline-flex;
         vertical-align: middle;
      }
+     nav {
+        background-color: rgba( 95, 93, 93, 1);
+        height: 60px;
+    }
+    a {color:#000;
+        text-decoration: none;}         /* Unvisited link  */
+        a:visited {color:#000;} /* Visited link    */
+        a:hover {color:#fff;}   /* Mouse over link */
+        a:active {color:#000;}
+      

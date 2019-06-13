@@ -44,19 +44,17 @@ export class ChartsComponent implements OnInit {
       { letter: 'Y', frequency: 0.01974 },
       { letter: 'Z', frequency: 0.00074 },
     ];
-    
-    const margin = { top: 20, right: 20, bottom: 30, left: 40 };
-    const width = 960 - margin.left - margin.right;
+    const margin = { top: 20, right: 80, bottom: 90, left: 250 };
+    const width = 1800 - margin.left - margin.right;
     const height = 500 - margin.top - margin.bottom;
-    
+
     const xScale = d3.scaleBand()
       .range([0, width])
       .round(true)
       .paddingInner(0.1); // space between bars (it's a ratio)
-    
     const yScale = d3.scaleLinear()
       .range([height, 0]);
-    
+
     const xAxis = d3.axisBottom()
       .scale(xScale);
 

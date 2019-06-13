@@ -36,3 +36,61 @@ width: 120px;
 }
 span
 {    color: #000}
+nav {
+  background-color: rgba( 95, 93, 93, 1);
+  height: 60px;
+}
+button {
+  background-color: rgb(139, 209, 236);
+   border: none;
+   cursor: pointer;
+   text-align: center;
+   padding: 5px 10px;
+   border-radius: 4px;
+}
+button:hover {
+  background-color: rgb(99, 150, 170);
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  padding: 5px 10px;
+  border-radius: 4px;
+  color: white;
+  box-shadow: 0 16px 16px 0 rgba(0,0,0,0.24),0 15px 40px 0 rgba(0,0,0,0.19);
+  top: 2px;
+  margin-top: 2px;
+
+}
+
+a {color:#000;
+  text-decoration: none;}         /* Unvisited link  */
+  a:visited {color:#000;} /* Visited link    */
+  a:hover {color:#fff;}   /* Mouse over link */
+  a:active {color:#000;}
+
+  button.id1 {
+    background-color: rgb(139, 209, 236);
+     border: none;
+     cursor: pointer;
+     text-align: center;
+     padding: 5px 10px;
+     border-radius: 4px;
+     float: right;
+  }
+  button.id1:hover {
+    background-color: rgb(99, 150, 170);
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    padding: 5px 10px;
+    border-radius: 4px;
+    color: white;
+    box-shadow: 0 16px 16px 0 rgba(0,0,0,0.24),0 15px 40px 0 rgba(0,0,0,0.19);
+    top: 2px;
+    float: right;
+    margin-top: 2px;
+  
+  }
+  svg {
+    align-self: center;
+  }
